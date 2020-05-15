@@ -1,1 +1,21 @@
+#!groovy
 
+properties([disableConcurrentBuilds()])
+
+
+pipeline {
+  agent {
+    label 'master'
+    }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    timestamps()
+    }
+  stage {
+    stage('Simple job') {
+      steps {
+        sh 'ssh ec2-user@aws hostname -s'
+        }
+      }
+    }
+ }
