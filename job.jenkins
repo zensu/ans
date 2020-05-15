@@ -22,4 +22,6 @@ pipeline {
         sh 'ssh ec2-user@aws dmesg | tail 10'
       }
     }
- }
+  }
+}
+
