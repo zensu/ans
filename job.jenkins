@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Stage 2') {
       steps {
-        sh 'ssh ec2-user@aws dmesg | tail 10'
+        sh 'ssh ec2-user@aws dmesg | tail -10'
       }
     }
   }
