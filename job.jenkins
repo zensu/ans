@@ -11,7 +11,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
     timestamps()
     }
-  stage {
+  stages {
     stage('Simple job') {
       steps {
         sh 'ssh ec2-user@aws hostname -s'
